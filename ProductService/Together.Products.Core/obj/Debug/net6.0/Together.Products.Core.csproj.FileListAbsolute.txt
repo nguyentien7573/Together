@@ -1,0 +1,15 @@
+D:\Practice\Together\ProductService\Together.Products.Core\bin\Debug\net6.0\Together.Products.Core.deps.json
+D:\Practice\Together\ProductService\Together.Products.Core\bin\Debug\net6.0\Together.Products.Core.dll
+D:\Practice\Together\ProductService\Together.Products.Core\bin\Debug\net6.0\Together.Products.Core.pdb
+D:\Practice\Together\ProductService\Together.Products.Core\bin\Debug\net6.0\Together.Base.dll
+D:\Practice\Together\ProductService\Together.Products.Core\bin\Debug\net6.0\Together.Base.pdb
+D:\Practice\Together\ProductService\Together.Products.Core\obj\Debug\net6.0\Together.Products.Core.csproj.AssemblyReference.cache
+D:\Practice\Together\ProductService\Together.Products.Core\obj\Debug\net6.0\Together.Products.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Practice\Together\ProductService\Together.Products.Core\obj\Debug\net6.0\Together.Products.Core.AssemblyInfoInputs.cache
+D:\Practice\Together\ProductService\Together.Products.Core\obj\Debug\net6.0\Together.Products.Core.AssemblyInfo.cs
+D:\Practice\Together\ProductService\Together.Products.Core\obj\Debug\net6.0\Together.Products.Core.csproj.CoreCompileInputs.cache
+D:\Practice\Together\ProductService\Together.Products.Core\obj\Debug\net6.0\Together.Products.Core.csproj.CopyComplete
+D:\Practice\Together\ProductService\Together.Products.Core\obj\Debug\net6.0\Together.Products.Core.dll
+D:\Practice\Together\ProductService\Together.Products.Core\obj\Debug\net6.0\refint\Together.Products.Core.dll
+D:\Practice\Together\ProductService\Together.Products.Core\obj\Debug\net6.0\Together.Products.Core.pdb
+D:\Practice\Together\ProductService\Together.Products.Core\obj\Debug\net6.0\ref\Together.Products.Core.dll

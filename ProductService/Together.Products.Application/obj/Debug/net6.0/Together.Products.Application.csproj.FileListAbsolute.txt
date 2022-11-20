@@ -1,0 +1,17 @@
+D:\Practice\Together\ProductService\Together.Products.Application\bin\Debug\net6.0\Together.Products.Application.deps.json
+D:\Practice\Together\ProductService\Together.Products.Application\bin\Debug\net6.0\Together.Products.Application.dll
+D:\Practice\Together\ProductService\Together.Products.Application\bin\Debug\net6.0\Together.Products.Application.pdb
+D:\Practice\Together\ProductService\Together.Products.Application\bin\Debug\net6.0\Together.Base.dll
+D:\Practice\Together\ProductService\Together.Products.Application\bin\Debug\net6.0\Together.Products.Core.dll
+D:\Practice\Together\ProductService\Together.Products.Application\bin\Debug\net6.0\Together.Products.Core.pdb
+D:\Practice\Together\ProductService\Together.Products.Application\bin\Debug\net6.0\Together.Base.pdb
+D:\Practice\Together\ProductService\Together.Products.Application\obj\Debug\net6.0\Together.Products.Application.csproj.AssemblyReference.cache
+D:\Practice\Together\ProductService\Together.Products.Application\obj\Debug\net6.0\Together.Products.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Practice\Together\ProductService\Together.Products.Application\obj\Debug\net6.0\Together.Products.Application.AssemblyInfoInputs.cache
+D:\Practice\Together\ProductService\Together.Products.Application\obj\Debug\net6.0\Together.Products.Application.AssemblyInfo.cs
+D:\Practice\Together\ProductService\Together.Products.Application\obj\Debug\net6.0\Together.Products.Application.csproj.CoreCompileInputs.cache
+D:\Practice\Together\ProductService\Together.Products.Application\obj\Debug\net6.0\Together.Products.Application.csproj.CopyComplete
+D:\Practice\Together\ProductService\Together.Products.Application\obj\Debug\net6.0\Together.Products.Application.dll
+D:\Practice\Together\ProductService\Together.Products.Application\obj\Debug\net6.0\refint\Together.Products.Application.dll
+D:\Practice\Together\ProductService\Together.Products.Application\obj\Debug\net6.0\Together.Products.Application.pdb
+D:\Practice\Together\ProductService\Together.Products.Application\obj\Debug\net6.0\ref\Together.Products.Application.dll
