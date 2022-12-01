@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "tf6dVbOkTnDT/6SIJyiwLe5n+6ZBzGnn5ymd+1r2vqRdKP7/2qVF81LJ6/Y3Qh/0cXhGGXDbgfE2/+a9LVMR0A==",
+  "success": true,
+  "projectFilePath": "E:\\Project\\Together\\Common\\Together.Core\\Together.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nguye\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
