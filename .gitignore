@@ -2,3 +2,11 @@ Common/Together.Core/obj
 Common/Together.Core/bin
 Common/Together.Infrastructure/bin
 Common/Together.Infrastructure/obj
+MicroServices/Product/Together.ProductService.Api/bin
+MicroServices/Product/Together.ProductService.Api/obj
+MicroServices/Product/Together.ProductService.Core/obj
+MicroServices/Product/Together.ProductService.Core/bin
+MicroServices/Product/Together.ProductService.Infrastructure/bin
+MicroServices/Product/Together.ProductService.Infrastructure/obj
+Common/Together.AppContracts/obj
+Common/Together.AppContracts/bin

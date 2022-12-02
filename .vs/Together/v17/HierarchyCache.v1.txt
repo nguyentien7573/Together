@@ -1,0 +1,277 @@
+﻿++Solution 'Together' ‎(4 of 4 projects)
+++Common
+i:{00000000-0000-0000-0000-000000000000}:Common
+++Together.Infrastructure
+i:{8d30c131-8223-4c54-a0a8-fe97525da49a}:Together.Infrastructure
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:e:\together\common\together.infrastructure\bin\debug\net6.0\together.infrastructure.dll
+++Dependencies
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:>111
+i:{580acb8c-f559-41d4-971c-8b3eff49ddb4}:>26
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:>389
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:>323
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:>486
+i:{edb6421c-b0d0-4e15-a845-3d5279ffcb3c}:>588
+++Analyzers
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:analyzers
+i:{580acb8c-f559-41d4-971c-8b3eff49ddb4}:analyzers
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:analyzers
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:analyzers
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:analyzers
+i:{edb6421c-b0d0-4e15-a845-3d5279ffcb3c}:analyzers
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:c:\program files\dotnet\sdk\6.0.306\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{580acb8c-f559-41d4-971c-8b3eff49ddb4}:c:\program files\dotnet\sdk\6.0.306\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:c:\program files\dotnet\sdk\6.0.306\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:c:\program files\dotnet\sdk\6.0.306\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:c:\program files\dotnet\sdk\6.0.306\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{edb6421c-b0d0-4e15-a845-3d5279ffcb3c}:c:\program files\dotnet\sdk\6.0.306\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:c:\program files\dotnet\sdk\6.0.306\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{580acb8c-f559-41d4-971c-8b3eff49ddb4}:c:\program files\dotnet\sdk\6.0.306\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:c:\program files\dotnet\sdk\6.0.306\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:c:\program files\dotnet\sdk\6.0.306\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:c:\program files\dotnet\sdk\6.0.306\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{edb6421c-b0d0-4e15-a845-3d5279ffcb3c}:c:\program files\dotnet\sdk\6.0.306\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++Microsoft.EntityFrameworkCore.Analyzers
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:c:\users\tien.nguyena\.nuget\packages\microsoft.entityframeworkcore.analyzers\7.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:c:\users\tien.nguyena\.nuget\packages\microsoft.entityframeworkcore.analyzers\7.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:c:\users\tien.nguyena\.nuget\packages\microsoft.entityframeworkcore.analyzers\7.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+++Microsoft.Extensions.Logging.Generators
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.11\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:c:\users\tien.nguyena\.nuget\packages\microsoft.extensions.logging.abstractions\7.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:c:\users\tien.nguyena\.nuget\packages\microsoft.extensions.logging.abstractions\7.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+++System.Text.Json.SourceGeneration
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.11\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{580acb8c-f559-41d4-971c-8b3eff49ddb4}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.11\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.11\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.11\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.11\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{edb6421c-b0d0-4e15-a845-3d5279ffcb3c}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.11\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+++Frameworks
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:frameworks
+i:{580acb8c-f559-41d4-971c-8b3eff49ddb4}:frameworks
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:frameworks
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:frameworks
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:frameworks
+i:{edb6421c-b0d0-4e15-a845-3d5279ffcb3c}:frameworks
+++Microsoft.NETCore.App
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.infrastructure\microsoft.netcore.app
+i:{580acb8c-f559-41d4-971c-8b3eff49ddb4}:e:\together\common\together.core\microsoft.netcore.app
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:e:\together\microservices\product\together.productservice.infrastructure\microsoft.netcore.app
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:e:\together\microservices\product\together.productservice.core\microsoft.netcore.app
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:e:\together\microservices\product\together.productservice.api\microsoft.netcore.app
+i:{edb6421c-b0d0-4e15-a845-3d5279ffcb3c}:e:\together\common\together.appcontracts\microsoft.netcore.app
+++Packages
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:packages
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:packages
+i:{580acb8c-f559-41d4-971c-8b3eff49ddb4}:packages
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:packages
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:packages
+++Microsoft.EntityFrameworkCore (7.0.0)
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:>1874
+++Microsoft.EntityFrameworkCore.SqlServer.Design (1.1.6)
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:>1870
+++Microsoft.Extensions.Configuration.Abstractions (7.0.0)
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:>1877
+++Microsoft.Extensions.Configuration.EnvironmentVariables (7.0.0)
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:>1875
+++Microsoft.Extensions.Configuration.FileExtensions (7.0.0)
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:>1873
+++Microsoft.Extensions.Configuration.Json (7.0.0)
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:>1871
+++Projects
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:projects
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:projects
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:projects
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:projects
+++Controller
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.infrastructure\controller\
+++Data
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.infrastructure\data\
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:e:\together\microservices\product\together.productservice.infrastructure\data\
+++AppDbContextBase.cs
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.infrastructure\data\appdbcontextbase.cs
+++DbContextDesignFactoryBase.cs
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.infrastructure\data\dbcontextdesignfactorybase.cs
+++RepositoryBase.cs
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.infrastructure\data\repositorybase.cs
+++Helpers
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.infrastructure\helpers\
+i:{580acb8c-f559-41d4-971c-8b3eff49ddb4}:e:\together\common\together.core\helpers\
+++ConfigurationHelper.cs
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.infrastructure\helpers\configurationhelper.cs
+++Swagger
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.infrastructure\swagger\
+++ConfigureSwaggerOptions.cs
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.infrastructure\swagger\configureswaggeroptions.cs
+++Extentions.cs
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.infrastructure\swagger\extentions.cs
+++SwaggerDefaultValues.cs
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.infrastructure\swagger\swaggerdefaultvalues.cs
+++Validator
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.infrastructure\validator\
+++Extensions.cs
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.infrastructure\validator\extensions.cs
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:e:\together\microservices\product\together.productservice.infrastructure\extensions.cs
+++RequestValidationBehavior.cs
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.infrastructure\validator\requestvalidationbehavior.cs
+++ValidationError.cs
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.infrastructure\validator\validationerror.cs
+++ValidationException.cs
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.infrastructure\validator\validationexception.cs
+++ValidationResultModel.cs
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.infrastructure\validator\validationresultmodel.cs
+++Together.Core
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.core\together.core.csproj
+i:{8d30c131-8223-4c54-a0a8-fe97525da49a}:Together.Core
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:e:\together\common\together.core\bin\debug\net6.0\together.core.dll
+++BaseController.cs
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:e:\together\common\together.infrastructure\controller\basecontroller.cs
+++Domain
+i:{580acb8c-f559-41d4-971c-8b3eff49ddb4}:e:\together\common\together.core\domain\
+++CoreException.cs
+i:{580acb8c-f559-41d4-971c-8b3eff49ddb4}:e:\together\common\together.core\domain\coreexception.cs
+++Cqrs.cs
+i:{580acb8c-f559-41d4-971c-8b3eff49ddb4}:e:\together\common\together.core\domain\cqrs.cs
+++EntityBase.cs
+i:{580acb8c-f559-41d4-971c-8b3eff49ddb4}:e:\together\common\together.core\domain\entitybase.cs
+++DateTimeHelper.cs
+i:{580acb8c-f559-41d4-971c-8b3eff49ddb4}:e:\together\common\together.core\helpers\datetimehelper.cs
+++GuidHelper.cs
+i:{580acb8c-f559-41d4-971c-8b3eff49ddb4}:e:\together\common\together.core\helpers\guidhelper.cs
+++Repository
+i:{580acb8c-f559-41d4-971c-8b3eff49ddb4}:e:\together\common\together.core\repository\
+++IRepository.cs
+i:{580acb8c-f559-41d4-971c-8b3eff49ddb4}:e:\together\common\together.core\repository\irepository.cs
+++MediatR (11.1.0)
+i:{580acb8c-f559-41d4-971c-8b3eff49ddb4}:>1860
+++MicroServices
+i:{00000000-0000-0000-0000-000000000000}:MicroServices
+++Product
+i:{bfa899a1-5918-4f39-80c0-c83f95bba1ba}:Product
+i:{edb6421c-b0d0-4e15-a845-3d5279ffcb3c}:e:\together\common\together.appcontracts\dtos\product\
+++Together.ProductService.Infrastructure
+i:{cb688a01-9ae3-4e86-bf64-83e6941f8c3d}:Together.ProductService.Infrastructure
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:e:\together\microservices\product\together.productservice.infrastructure\together.productservice.infrastructure.csproj
+++Together.ProductService.Core
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:e:\together\microservices\product\together.productservice.core\bin\debug\net6.0\together.productservice.core.dll
+i:{cb688a01-9ae3-4e86-bf64-83e6941f8c3d}:Together.ProductService.Core
+++ProductDbContext.cs
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:e:\together\microservices\product\together.productservice.infrastructure\data\productdbcontext.cs
+++Repositories
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:e:\together\microservices\product\together.productservice.infrastructure\repositories\
+++ProductCategoryRepository.cs
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:e:\together\microservices\product\together.productservice.infrastructure\repositories\productcategoryrepository.cs
+++ProductRepository.cs
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:e:\together\microservices\product\together.productservice.infrastructure\repositories\productrepository.cs
+++Entities
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:e:\together\microservices\product\together.productservice.core\entities\
+++Product.cs
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:e:\together\microservices\product\together.productservice.core\entities\product.cs
+++ProductCategory.cs
+++ProductDbContextDesignFactory.cs
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:e:\together\microservices\product\together.productservice.infrastructure\data\productdbcontextdesignfactory.cs
+++Solution 'Together' ‎(5 of 5 projects)
+++Together.ProductService.Api
+i:{cb688a01-9ae3-4e86-bf64-83e6941f8c3d}:Together.ProductService.Api
+++Connected Services 
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:>487
+++Properties
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:e:\together\microservices\product\together.productservice.api\properties\
+++Controllers
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:e:\together\microservices\product\together.productservice.api\controllers\
+++appsettings.json
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:e:\together\microservices\product\together.productservice.api\appsettings.json
+++Program.cs
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:e:\together\microservices\product\together.productservice.api\program.cs
+++WeatherForecast.cs
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:e:\together\microservices\product\together.productservice.api\weatherforecast.cs
+++No service dependencies discovered
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:>488
+++launchSettings.json
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:e:\together\microservices\product\together.productservice.api\properties\launchsettings.json
+++WeatherForecastController.cs
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:e:\together\microservices\product\together.productservice.api\controllers\weatherforecastcontroller.cs
+++appsettings.Development.json
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:e:\together\microservices\product\together.productservice.api\appsettings.development.json
+++C:\Program Files\dotnet\sdk\6.0.306\Sdks\Microsoft.NET.Sdk.Web\analyzers\cs\Microsoft.AspNetCore.Analyzers.dll
+++C:\Program Files\dotnet\sdk\6.0.306\Sdks\Microsoft.NET.Sdk.Web\analyzers\cs\Microsoft.AspNetCore.Components.Analyzers.dll
+++C:\Program Files\dotnet\sdk\6.0.306\Sdks\Microsoft.NET.Sdk.Web\analyzers\cs\Microsoft.AspNetCore.Mvc.Analyzers.dll
+++C:\Program Files\dotnet\sdk\6.0.306\Sdks\Microsoft.NET.Sdk\targets\..\analyzers\Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll
+++C:\Program Files\dotnet\sdk\6.0.306\Sdks\Microsoft.NET.Sdk\targets\..\analyzers\Microsoft.CodeAnalysis.NetAnalyzers.dll
+++Microsoft.AspNetCore.App
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:e:\together\microservices\product\together.productservice.api\microsoft.aspnetcore.app
+++Swashbuckle.AspNetCore (6.2.3)
+++Microsoft.AspNetCore.Analyzers
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:c:\program files\dotnet\sdk\6.0.306\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.App.Analyzers
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.11\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.11\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.11\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+++Microsoft.AspNetCore.App.CodeFixes
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.11\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.11\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.11\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:c:\program files\dotnet\sdk\6.0.306\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:c:\program files\dotnet\sdk\6.0.306\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.AspNetCore.Razor.SourceGenerator.Tooling.Internal
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:c:\program files\dotnet\sdk\6.0.306\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.sourcegenerator.tooling.internal.dll
+++Microsoft.NET.Sdk.Razor.SourceGenerators
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:c:\program files\dotnet\sdk\6.0.306\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
+++NewFolder
+++UseCases
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:e:\together\microservices\product\together.productservice.core\usecases\
+++Commands
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:e:\together\microservices\product\together.productservice.core\usecases\commands\
+++Queries
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:e:\together\microservices\product\together.productservice.core\usecases\queries\
+++ProductCategories
+++Interfaces
+++IProductCategoryQueries.cs
+++IProductQueries.cs
+++Implement
+++implements
+++Implements
+++ProductCategoryQueries.cs
+++ProductQueries.cs
+++Solution 'Together' ‎(6 of 6 projects)
+i:{00000000-0000-0000-0000-000000000000}:Together.sln
+++Together.AppContracts
+i:{8d30c131-8223-4c54-a0a8-fe97525da49a}:Together.AppContracts
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:e:\together\common\together.appcontracts\bin\debug\net6.0\together.appcontracts.dll
+++Class1.cs
+++Dtos
+i:{edb6421c-b0d0-4e15-a845-3d5279ffcb3c}:e:\together\common\together.appcontracts\dtos\
+++Products
+++ProductDto.cs
+i:{edb6421c-b0d0-4e15-a845-3d5279ffcb3c}:e:\together\common\together.appcontracts\dtos\product\productdto.cs
+++CreateProductCommand.cs
+++CreateProduct.cs
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:e:\together\microservices\product\together.productservice.core\usecases\commands\createproduct.cs
+++FluentValidation (11.4.0)
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:>1862
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:>1868
+++GetProductById.cs
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:e:\together\microservices\product\together.productservice.core\usecases\queries\getproductbyid.cs
+++Category.cs
+i:{8d34eb6f-62ad-460a-a116-61dac1d51806}:e:\together\microservices\product\together.productservice.core\entities\category.cs
+++Swashbuckle.AspNetCore.SwaggerGen (6.4.0)
+++Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer (5.0.0)
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:>1869
+++Microsoft.Extensions.PlatformAbstractions (1.1.0)
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:>1876
+++Swashbuckle.AspNetCore.Swagger (6.4.0)
+++Swashbuckle.AspNetCore (6.4.0)
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:>1878
+i:{28161320-0942-4931-a0ce-71a0c596f1fb}:>1972
+++Microsoft.EntityFrameworkCore.Design (7.0.0)
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:>1855
+i:{96952091-f3e8-4ebf-bc6b-95eb61f14f1e}:>1872
+++Migration
+++Together.ProductService.Infrastructure.csproj.bak
+++Microsoft.EntityFrameworkCore.Design (6.0.8)
+++Microsoft.EntityFrameworkCore.Tools (7.0.0)
+i:{3be4ea35-6467-410b-9651-05bcfb0cc44b}:>1856
+++Microsoft.EntityFrameworkCore.SqlServer (7.0.0)
