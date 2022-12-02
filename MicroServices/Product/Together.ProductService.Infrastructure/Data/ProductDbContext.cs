@@ -4,6 +4,7 @@ using Together.ProductService.Core.Entities;
 
 namespace Together.ProductService.Infrastructure.Data
 {
+    //Command : add-migration Together.Product
     public class ProductDbContext : AppDbContextBase
     {
         private const string Schema = "prod";

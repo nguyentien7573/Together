@@ -5,8 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Together.Core.Repository;
 using Together.Infrastructure.Swagger;
+using Together.ProductService.Core.Entities;
 using Together.ProductService.Infrastructure.Data;
+using Together.ProductService.Infrastructure.Repositories;
 
 namespace Together.ProductService.Infrastructure
 {
@@ -28,9 +31,10 @@ namespace Together.ProductService.Infrastructure
             services.AddControllers();
             services.AddSwagger();
 
-            services.AddDbContext<ProductDbContext>(
-                 options => options.UseSqlServer("Server=TIENNGUYENA-DL2;Database=Together.ProductDb;Trusted_Connection=True;"));
-          
+            services.AddDbContext<ProductDbContext>( options => options.UseSqlServer(config.GetConnectionString("defaultConnection")));
+
+            services.AddScoped<IRepository<Product>, ProductRepository>();
+
             return services;
         }
 
