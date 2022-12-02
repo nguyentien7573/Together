@@ -4,12 +4,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.PlatformAbstractions;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System.Reflection;
 
 namespace Together.Infrastructure.Swagger
 {
     public static class Extentions
     {
-        public static IServiceCollection AddSwagger(this IServiceCollection services, Type anchor)
+        public static IServiceCollection AddSwagger(this IServiceCollection services)
         {
             services.AddApiVersioning(
                 options =>
@@ -24,26 +25,9 @@ namespace Together.Infrastructure.Swagger
                     options.SubstituteApiVersionInUrl = true;
                 });
             services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
-            services.AddSwaggerGen(
-                options =>
-                {
-                    options.OperationFilter<SwaggerDefaultValues>();
-
-                    var xmlFile = XmlCommentsFilePath(anchor);
-                    if (File.Exists(xmlFile))
-                    {
-                        options.IncludeXmlComments(xmlFile);
-                    }
-                });
+            services.AddSwaggerGen();
 
             return services;
-
-            static string XmlCommentsFilePath(Type anchor)
-            {
-                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
-                var fileName = anchor.GetTypeInfo().Assembly.GetName().Name + ".xml";
-                return Path.Combine(basePath, fileName);
-            }
         }
 
         public static IApplicationBuilder UseSwagger(this IApplicationBuilder app, IApiVersionDescriptionProvider provider)

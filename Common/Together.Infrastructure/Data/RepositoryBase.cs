@@ -15,9 +15,9 @@ namespace Together.Infrastructure.Data
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
-        public TEntity FindById(Guid id)
+        public async Task<TEntity> FindById(Guid id)
         {
-            var temp = _dbContext.Set<TEntity>().SingleOrDefault(e => e.Id == id);
+            var temp = await _dbContext.Set<TEntity>().SingleOrDefaultAsync(e => e.Id == id);
             return temp;
         }
 
@@ -36,7 +36,7 @@ namespace Together.Infrastructure.Data
 
             if (tempEntity != null)
             {
-                tempEntity.isActive = false;
+                tempEntity.Active = false;
                 var result = await _dbContext.SaveChangesAsync();
                 return result > 0;
             }
