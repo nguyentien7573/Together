@@ -26,7 +26,8 @@ namespace Together.ProductService.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("NEWID()");
 
                     b.Property<bool>("Active")
                         .HasColumnType("bit");
@@ -49,14 +50,15 @@ namespace Together.ProductService.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", "prod");
                 });
 
             modelBuilder.Entity("Together.ProductService.Core.Entities.Product", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("NEWID()");
 
                     b.Property<bool>("Active")
                         .HasColumnType("bit");
@@ -90,7 +92,7 @@ namespace Together.ProductService.Infrastructure.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", "prod");
                 });
 
             modelBuilder.Entity("Together.ProductService.Core.Entities.Product", b =>

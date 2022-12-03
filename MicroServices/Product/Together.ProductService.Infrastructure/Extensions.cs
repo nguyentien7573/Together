@@ -6,10 +6,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Together.Core.Repository;
+using Together.Infrastructure.Validator;
+using Together.Infrastructure;
 using Together.Infrastructure.Swagger;
 using Together.ProductService.Core.Entities;
 using Together.ProductService.Infrastructure.Data;
 using Together.ProductService.Infrastructure.Repositories;
+using AppCoreAnchor = Together.ProductService.Core.Anchor;
 
 namespace Together.ProductService.Infrastructure
 {
@@ -17,7 +20,7 @@ namespace Together.ProductService.Infrastructure
     {
         private const string CorsName = "api";
 
-        public static IServiceCollection AddCoreServices(this IServiceCollection services, IConfiguration config, IWebHostEnvironment env)
+        public static IServiceCollection AddCoreServices(this IServiceCollection services, IConfiguration config, IWebHostEnvironment env, Type apiType)
         {
             services.AddCors(options =>
             {
@@ -28,10 +31,12 @@ namespace Together.ProductService.Infrastructure
             });
 
             services.AddHttpContextAccessor();
+            services.AddCustomMediatR(new[] { typeof(AppCoreAnchor) });
+            services.AddCustomValidators(new[] { typeof(AppCoreAnchor) });
             services.AddControllers();
-            services.AddSwagger();
+            services.AddSwagger(apiType);
 
-            services.AddDbContext<ProductDbContext>( options => options.UseSqlServer(config.GetConnectionString("defaultConnection")));
+            services.AddDbContext<ProductDbContext>(options => options.UseSqlServer(config.GetConnectionString("defaultConnection")));
 
             services.AddScoped<IRepository<Product>, ProductRepository>();
 

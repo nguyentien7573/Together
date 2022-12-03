@@ -18,13 +18,13 @@ namespace Together.ProductService.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Product>().ToTable("Products", Schema);
-            //modelBuilder.Entity<Product>().HasKey(x => x.Id);
-            //modelBuilder.Entity<Product>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
+            modelBuilder.Entity<Product>().ToTable("Products", Schema);
+            modelBuilder.Entity<Product>().HasKey(x => x.Id);
+            modelBuilder.Entity<Product>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
 
-            //modelBuilder.Entity<Category>().ToTable("Categories", Schema);
-            //modelBuilder.Entity<Category>().HasKey(x => x.Id);
-            //modelBuilder.Entity<Category>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
+            modelBuilder.Entity<Category>().ToTable("Categories", Schema);
+            modelBuilder.Entity<Category>().HasKey(x => x.Id);
+            modelBuilder.Entity<Category>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
         }
     }
 }

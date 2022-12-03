@@ -40,7 +40,12 @@ namespace Together.ProductService.Core.UseCases.Queries
 
                     var product = await _productRepository.FindById(request.Id);
 
-                    return ResultModel<ProductDto>.Create(new ProductDto
+                    if (product == null)
+                    {
+                        return null;
+                    }
+
+                    return  ResultModel<ProductDto>.Create(new ProductDto
                     {
                         Id = product.Id,
                         Name = product.Name,

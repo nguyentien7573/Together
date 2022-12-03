@@ -12,7 +12,7 @@ using Together.ProductService.Infrastructure.Data;
 namespace Together.ProductService.Infrastructure.Migrations
 {
     [DbContext(typeof(ProductDbContext))]
-    [Migration("20221202162452_Together.Product")]
+    [Migration("20221203075140_Together.Product")]
     partial class TogetherProduct
     {
         /// <inheritdoc />
@@ -29,7 +29,8 @@ namespace Together.ProductService.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("NEWID()");
 
                     b.Property<bool>("Active")
                         .HasColumnType("bit");
@@ -52,14 +53,15 @@ namespace Together.ProductService.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", "prod");
                 });
 
             modelBuilder.Entity("Together.ProductService.Core.Entities.Product", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("NEWID()");
 
                     b.Property<bool>("Active")
                         .HasColumnType("bit");
@@ -93,7 +95,7 @@ namespace Together.ProductService.Infrastructure.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", "prod");
                 });
 
             modelBuilder.Entity("Together.ProductService.Core.Entities.Product", b =>
