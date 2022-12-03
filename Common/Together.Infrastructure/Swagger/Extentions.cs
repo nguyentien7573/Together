@@ -10,7 +10,7 @@ namespace Together.Infrastructure.Swagger
 {
     public static class Extentions
     {
-        public static IServiceCollection AddSwagger(this IServiceCollection services)
+        public static IServiceCollection AddSwagger(this IServiceCollection services, Type anchor)
         {
             services.AddApiVersioning(
                 options =>
@@ -26,7 +26,23 @@ namespace Together.Infrastructure.Swagger
                 });
             services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
             services.AddSwaggerGen();
+            services.AddSwaggerGen(
+                options =>
+                {
+                    options.OperationFilter<SwaggerDefaultValues>();
 
+                    var xmlFile = XmlCommentsFilePath(anchor);
+                    if (File.Exists(xmlFile))
+                    {
+                        options.IncludeXmlComments(xmlFile);
+                    }
+                });
+            static string XmlCommentsFilePath(Type anchor)
+            {
+                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+                var fileName = anchor.GetTypeInfo().Assembly.GetName().Name + ".xml";
+                return Path.Combine(basePath, fileName);
+            }
             return services;
         }
 
