@@ -11,7 +11,7 @@ namespace Together.ProductService.Api.V1
     public class ProductController : BaseController
     {
         
-        [HttpGet("/api/V1/products/{id:guid}")]
+        [HttpGet("/api/v{version:apiVersion}/products/{id:guid}")]
         public async Task<ActionResult<ProductDto>> HandleGetProductByIdAsync(Guid id,
             CancellationToken cancellationToken = new())
         {
@@ -20,7 +20,7 @@ namespace Together.ProductService.Api.V1
             return Ok(await Mediator.Send(request, cancellationToken));
         }
 
-        [HttpPost("/api/V1/products")]
+        [HttpPost("/api/v{version:apiVersion}/products")]
         public async Task<ActionResult> HandleCreateProductAsync([FromBody] CreateProduct.Command request, CancellationToken cancellationToken = new())
         {
             return Ok(await Mediator.Send(request, cancellationToken));
