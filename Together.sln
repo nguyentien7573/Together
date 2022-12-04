@@ -23,19 +23,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Together.AppContracts", "Co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{A2FB9FC1-64EC-4648-9FC2-DB89FBDE6279}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Together.OrderService.Core", "MicroServices\Order\Together.OrderService.Core\Together.OrderService.Core.csproj", "{22A51156-D058-47D5-BF44-00024483D04F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Together.OrderService.Core", "MicroServices\Order\Together.OrderService.Core\Together.OrderService.Core.csproj", "{22A51156-D058-47D5-BF44-00024483D04F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Together.OrderService.Infrastructure", "MicroServices\Order\Together.OrderService.Infrastructure\Together.OrderService.Infrastructure.csproj", "{58AF4F2F-CCC6-46AC-BEB3-FB665A310E85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Together.OrderService.Infrastructure", "MicroServices\Order\Together.OrderService.Infrastructure\Together.OrderService.Infrastructure.csproj", "{58AF4F2F-CCC6-46AC-BEB3-FB665A310E85}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Customer", "Customer", "{AAF1593E-E20A-418A-B002-EA161F005A30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Together.CustomerService.Core", "MicroServices\Customer\Together.CustomerService.Core\Together.CustomerService.Core.csproj", "{28FC2B63-0843-4CBC-BC16-56E5D83D8A35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Together.CustomerService.Core", "MicroServices\Customer\Together.CustomerService.Core\Together.CustomerService.Core.csproj", "{28FC2B63-0843-4CBC-BC16-56E5D83D8A35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Together.CustomerService.Infrastructor", "MicroServices\Customer\Together.CustomerService.Infrastructor\Together.CustomerService.Infrastructor.csproj", "{BF0F9E8D-4A11-4033-8508-2B14E350F350}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Together.CustomerService.Infrastructor", "MicroServices\Customer\Together.CustomerService.Infrastructor\Together.CustomerService.Infrastructor.csproj", "{BF0F9E8D-4A11-4033-8508-2B14E350F350}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Together.OrderService.Api", "MicroServices\Order\Together.OrderService.Api\Together.OrderService.Api.csproj", "{72D83112-57B7-49F3-A1EA-B92765CF54C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Together.OrderService.Api", "MicroServices\Order\Together.OrderService.Api\Together.OrderService.Api.csproj", "{72D83112-57B7-49F3-A1EA-B92765CF54C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Together.CustomerService.Api", "MicroServices\Customer\Together.CustomerService.Api\Together.CustomerService.Api.csproj", "{0C9CCEFD-3EEF-48C6-9539-7E58587651FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Together.CustomerService.Api", "MicroServices\Customer\Together.CustomerService.Api\Together.CustomerService.Api.csproj", "{0C9CCEFD-3EEF-48C6-9539-7E58587651FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppGateway", "AppGateway", "{9F543D78-DF9E-47B0-A891-E8429D3DC0A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Together.ApiGateway", "AppGateway\Together.ApiGateway\Together.ApiGateway.csproj", "{5BD93F04-96B9-4CEB-AC3E-25DBB0C34C31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +95,10 @@ Global
 		{0C9CCEFD-3EEF-48C6-9539-7E58587651FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C9CCEFD-3EEF-48C6-9539-7E58587651FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C9CCEFD-3EEF-48C6-9539-7E58587651FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BD93F04-96B9-4CEB-AC3E-25DBB0C34C31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BD93F04-96B9-4CEB-AC3E-25DBB0C34C31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BD93F04-96B9-4CEB-AC3E-25DBB0C34C31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BD93F04-96B9-4CEB-AC3E-25DBB0C34C31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -111,6 +119,7 @@ Global
 		{BF0F9E8D-4A11-4033-8508-2B14E350F350} = {AAF1593E-E20A-418A-B002-EA161F005A30}
 		{72D83112-57B7-49F3-A1EA-B92765CF54C0} = {A2FB9FC1-64EC-4648-9FC2-DB89FBDE6279}
 		{0C9CCEFD-3EEF-48C6-9539-7E58587651FB} = {AAF1593E-E20A-418A-B002-EA161F005A30}
+		{5BD93F04-96B9-4CEB-AC3E-25DBB0C34C31} = {9F543D78-DF9E-47B0-A891-E8429D3DC0A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {24CEB503-C2A5-41D8-8D3E-D4DF7087A2A5}
