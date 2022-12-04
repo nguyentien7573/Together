@@ -13,7 +13,7 @@ namespace Together.CustomerService.Core.UseCases.Commands
         {
             public CreateCustomerModel Model { get; init; } = default!;
 
-            public record CreateCustomerModel(string FirstName, string LastName, string Email, Guid CountryId);
+            public record CreateCustomerModel(string FirstName, string LastName, string Email);
 
             internal class Validator : AbstractValidator<Command>
             {

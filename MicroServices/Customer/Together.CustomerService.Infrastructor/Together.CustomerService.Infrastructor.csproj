@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Together.Infrastructure\Together.Infrastructure.csproj" />
+    <ProjectReference Include="..\Together.CustomerService.Core\Together.CustomerService.Core.csproj" />
+  </ItemGroup>
+
 </Project>
