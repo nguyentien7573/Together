@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Together.AppContracts.Dtos.Product;
 using Together.Infrastructure.Controller;
 using Together.ProductService.Core.UseCases.Commands;
@@ -8,6 +9,7 @@ namespace Together.ProductService.Api.V1
 {
     [ApiController]
     [ApiVersion("1.0")]
+    [Authorize]
     public class ProductController : BaseController
     {
         
