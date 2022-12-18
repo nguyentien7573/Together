@@ -32,3 +32,5 @@ MicroServices/Order/Together.OrderService.Api/bin
 MicroServices/Order/Together.OrderService.Api/obj
 AppGateway/Together.ApiGateway/bin
 AppGateway/Together.ApiGateway/obj
+MicroServices/Identity/Together.IdentityServer/bin
+MicroServices/Identity/Together.IdentityServer/obj
