@@ -1,4 +1,6 @@
 using Microsoft.IdentityModel.Tokens;
+using Together.Product.Process.Implement;
+using Together.Product.Process.Interface;
 using Together.ProductService.Infrastructure;
 using ApiAnchor = Together.ProductService.Api.V1.Anchor;
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +10,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IRabitMQProducer, RabitMQProducer>();
 
 builder.Services.AddAuthentication("Bearer")
             .AddJwtBearer("Bearer", options =>

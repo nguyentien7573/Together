@@ -35,6 +35,31 @@ namespace Together.IdentityServer
                     var context = scope.ServiceProvider.GetService<ApplicationDbContext>();
                     context.Database.Migrate();
 
+                    #region Add Role
+                    var roleMgr = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+                    var member = roleMgr.FindByNameAsync("member").Result;
+
+                    if (member == null)
+                    {
+                        member = new IdentityRole
+                        {
+                            Name = "member"
+                        };
+                        _ = roleMgr.CreateAsync(member).Result;
+                    }
+
+                    var admin = roleMgr.FindByNameAsync("admin").Result;
+                    if (admin == null)
+                    {
+                        admin = new IdentityRole
+                        {
+                            Name = "admin"
+                        };
+                        _ = roleMgr.CreateAsync(admin).Result;
+                    }
+                    #endregion
+
+                    #region Add Users
                     var userMgr = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
                     var alice = userMgr.FindByNameAsync("alice").Result;
                     if (alice == null)
@@ -46,6 +71,7 @@ namespace Together.IdentityServer
                             EmailConfirmed = true,
                         };
                         var result = userMgr.CreateAsync(alice, "Pass123$").Result;
+
                         if (!result.Succeeded)
                         {
                             throw new Exception(result.Errors.First().Description);
@@ -57,10 +83,17 @@ namespace Together.IdentityServer
                             new Claim(JwtClaimTypes.FamilyName, "Smith"),
                             new Claim(JwtClaimTypes.WebSite, "http://alice.com"),
                         }).Result;
+
                         if (!result.Succeeded)
                         {
                             throw new Exception(result.Errors.First().Description);
                         }
+
+                        if (!userMgr.IsInRoleAsync(alice, member.Name).Result)
+                        {
+                            _ = userMgr.AddToRoleAsync(alice, member.Name).Result;
+                        }
+
                         Log.Debug("alice created");
                     }
                     else
@@ -90,12 +123,20 @@ namespace Together.IdentityServer
                             new Claim(JwtClaimTypes.WebSite, "http://bob.com"),
                             new Claim("location", "somewhere")
                         }).Result;
+
                         if (!result.Succeeded)
                         {
                             throw new Exception(result.Errors.First().Description);
                         }
+
+                        if (!userMgr.IsInRoleAsync(bob, admin.Name).Result)
+                        {
+                            _ = userMgr.AddToRoleAsync(bob, admin.Name).Result;
+                        }
                         Log.Debug("bob created");
                     }
+                    #endregion
+
                     else
                     {
                         Log.Debug("bob already exists");
