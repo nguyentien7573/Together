@@ -13,7 +13,7 @@ namespace Together.ProductService.Core.UseCases.Commands
         {
             public CreateProductModel Model { get; init; } = default!;
 
-            public record CreateProductModel(string Name, int Quantity, decimal Cost, bool isActive);
+            public record CreateProductModel(string Name, int Quantity, decimal Cost,Guid CategoryID, bool isActive);
 
             internal class Validator : AbstractValidator<Command>
             {
@@ -28,6 +28,9 @@ namespace Together.ProductService.Core.UseCases.Commands
 
                     RuleFor(x => x.Model.Cost)
                         .GreaterThanOrEqualTo(1000).WithMessage("Cost should be greater than 1000.");
+
+                    RuleFor(x => x.Model.CategoryID)
+                        .NotEmpty().WithMessage("Category is required.");
                 }
             }
 
@@ -47,6 +50,7 @@ namespace Together.ProductService.Core.UseCases.Commands
                             request.Model.Name,
                             request.Model.Quantity,
                             request.Model.Cost,
+                            request.Model.CategoryID,
                             request.Model.isActive));
 
                     return ResultModel<ProductDto>.Create(new ProductDto
@@ -56,6 +60,7 @@ namespace Together.ProductService.Core.UseCases.Commands
                         Active = created.Active,
                         Cost = created.Cost,
                         Quantity = created.Quantity,
+                        CategoryId = created.CategoryId,
                         CreatedOn = created.CreatedOn,
                         UpdatedOn = created.UpdatedOn,
                     });

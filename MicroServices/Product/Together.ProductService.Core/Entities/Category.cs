@@ -10,7 +10,17 @@ namespace Together.ProductService.Core.Entities
         }
 
         public string Name { get; set; }
-
         public virtual ICollection<Product> Product { get; set; }
+
+        public static Category Create(string name, bool Active)
+        {
+            Category category = new()
+            {
+                Name = name,
+                Active = Active,
+            };
+
+            return category;
+        }
     }
 }

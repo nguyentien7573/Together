@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\EventsBus\Together.Product.Process\Together.Product.Process.csproj" />
     <ProjectReference Include="..\Together.ProductService.Infrastructure\Together.ProductService.Infrastructure.csproj" />
   </ItemGroup>
 
