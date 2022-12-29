@@ -30,7 +30,7 @@ namespace Together.Infrastructure.Swagger
                 options =>
                 {
                     options.OperationFilter<SwaggerDefaultValues>();
-
+                    options.CustomSchemaIds(s => s.FullName.Replace("+", "."));
                     var xmlFile = XmlCommentsFilePath(anchor);
                     if (File.Exists(xmlFile))
                     {
