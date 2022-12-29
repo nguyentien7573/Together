@@ -1,9 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Together.Infrastructure\Together.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Product\Together.ProductService.Infrastructure\Together.ProductService.Infrastructure.csproj" />
+    <ProjectReference Include="..\Together.OrderService.Core\Together.OrderService.Core.csproj" />
+  </ItemGroup>
 
 </Project>
