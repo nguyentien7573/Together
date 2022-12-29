@@ -12,7 +12,7 @@
     "Together.CustomerService.Api": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": false,
+      "launchBrowser": true,
       "launchUrl": "swagger",
       "applicationUrl": "https://localhost:5002;",
       "environmentVariables": {
