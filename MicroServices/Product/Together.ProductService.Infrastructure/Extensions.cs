@@ -39,6 +39,7 @@ namespace Together.ProductService.Infrastructure
             services.AddDbContext<ProductDbContext>(options => options.UseSqlServer(config.GetConnectionString("defaultConnection")));
 
             services.AddScoped<IRepository<Product>, ProductRepository>();
+            services.AddScoped<IRepository<Category>, CategoryRepository>();
 
             return services;
         }

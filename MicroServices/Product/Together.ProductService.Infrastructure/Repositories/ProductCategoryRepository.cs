@@ -4,9 +4,9 @@ using Together.ProductService.Infrastructure.Data;
 
 namespace Together.ProductService.Infrastructure.Repositories
 {
-    public class ProductCategoryRepository : RepositoryBase<ProductDbContext, Category>
+    public class CategoryRepository : RepositoryBase<ProductDbContext, Category>
     {
-        public ProductCategoryRepository(ProductDbContext dbContext) : base(dbContext)
+        public CategoryRepository(ProductDbContext dbContext) : base(dbContext)
         {
         }
     }
