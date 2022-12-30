@@ -7,10 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\Queries\" />
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="FluentValidation" Version="11.4.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Together.AppContracts\Together.AppContracts.csproj" />
     <ProjectReference Include="..\..\..\Common\Together.Core\Together.Core.csproj" />
   </ItemGroup>
 

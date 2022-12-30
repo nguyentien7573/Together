@@ -1,8 +1,12 @@
+using ApiAnchor = Together.OrderService.Api.V1.Anchor;
+using Together.OrderService.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddCoreServices(builder.Configuration, builder.Environment, typeof(ApiAnchor));
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
