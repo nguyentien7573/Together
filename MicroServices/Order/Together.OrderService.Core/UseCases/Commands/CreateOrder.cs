@@ -15,14 +15,14 @@ namespace Together.OrderService.Core.UseCases.Commands
         {
             public CreateOrdertModel Model { get; init; } = default!;
 
-            public record CreateOrdertModel(Guid CustomerId, Address  Address, float TotalCost, string Description, string Status, List<OrderItem> OrderItems);
+            public record CreateOrdertModel(Guid CustomerId, string  Address, float TotalCost, string Description, string Status, List<OrderItem> OrderItems);
 
             internal class Validator : AbstractValidator<Command>
             {
                 public Validator()
                 {
                     RuleFor(v => v.Model.CustomerId)
-                        .NotEmpty().WithMessage("Name is required.");
+                        .NotEmpty().WithMessage("CustomerId is required.");
 
                     RuleFor(x => x.Model.TotalCost)
                         .GreaterThanOrEqualTo(0).WithMessage("Quantity should at least greater than or equal to 0.");
@@ -72,7 +72,7 @@ namespace Together.OrderService.Core.UseCases.Commands
                         Id = created.Id,
                         CustomerId = created.CustomerId,
                         TotalCost = created.TotalCost,
-                        Address = mapper.Map<Address, AddressDto>(created.Address),
+                        Address = created.Address,
                         Status = created.Status,
                         Description = created.Description,
                         OrderItems = orderItems,
