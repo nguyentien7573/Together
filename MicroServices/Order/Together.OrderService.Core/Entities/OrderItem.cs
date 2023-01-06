@@ -4,9 +4,9 @@ namespace Together.OrderService.Core.Entities
 {
     public class OrderItem : EntityBase
     {
-        public int ProductId { get; private set; }
-        private decimal UnitPrice { get; set; }
-        private decimal Discount { get; set; }
-        private int Units { get; set; }
+        public Guid ProductId { get; set; }
+        public decimal UnitPrice { get; set; }
+        public decimal Discount { get; set; }
+        public int Units { get; set; }
     }
 }
