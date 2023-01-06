@@ -9,7 +9,7 @@ namespace Together.OrderService.Core.EntityConfig
         public MappingProfile()
         {
             CreateMap<Order, OrderDto>();
-            CreateMap<Address, AddressDto>();
+            CreateMap<OrderItem, OrderItemDto>();
         }
     }
 }

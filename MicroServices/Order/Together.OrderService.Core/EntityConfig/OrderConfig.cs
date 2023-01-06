@@ -8,8 +8,6 @@ namespace Together.OrderService.Core.EntityConfig
     {
         public static void CreateMap(IMapperConfigurationExpression cfg)
         {
-            cfg.CreateMap<Address, AddressDto>();
-
             cfg.CreateMap<Order, OrderDto>();
         }
     }
