@@ -39,6 +39,7 @@ namespace Together.OrderService.Infrastructure
             services.AddDbContext<OrderDbContext>(options => options.UseSqlServer(config.GetConnectionString("defaultConnection")));
 
             services.AddScoped<IRepository<Order>, OrderRepository>();
+            services.AddScoped<IRepository<OrderItem>, OrderItemRepository>();
 
             return services;
         }
