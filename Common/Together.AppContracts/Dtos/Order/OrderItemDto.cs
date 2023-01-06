@@ -1,10 +1,10 @@
 ﻿namespace Together.AppContracts.Dtos.Order
 {
-    public class OrderItemDto
+    public class OrderItemDto : BaseDto
     {
-        public int ProductId { get; private set; }
-        private decimal UnitPrice { get; set; }
-        private decimal Discount { get; set; }
-        private int Units { get; set; }
+        public Guid ProductId { get; private set; }
+        public decimal UnitPrice { get; set; }
+        public decimal Discount { get; set; }
+        public int Units { get; set; }
     }
 }
