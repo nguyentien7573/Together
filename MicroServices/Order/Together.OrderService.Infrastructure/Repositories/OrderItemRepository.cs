@@ -4,9 +4,9 @@ using Together.OrderService.Infrastructure.Data;
 
 namespace Together.OrderService.Infrastructure.Repositories
 {
-    public class OrderRepository : RepositoryBase<OrderDbContext, Order>
+    public class OrderItemRepository : RepositoryBase<OrderDbContext, OrderItem>
     {
-        public OrderRepository(OrderDbContext dbContext) : base(dbContext)
+        public OrderItemRepository(OrderDbContext dbContext) : base(dbContext)
         {
         }
     }
