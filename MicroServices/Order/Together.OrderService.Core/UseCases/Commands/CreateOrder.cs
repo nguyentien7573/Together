@@ -15,7 +15,7 @@ namespace Together.OrderService.Core.UseCases.Commands
         {
             public CreateOrdertModel Model { get; init; } = default!;
 
-            public record CreateOrdertModel(Guid CustomerId, string  Address, float TotalCost, string Description, string Status, List<OrderItem> OrderItems);
+            public record CreateOrdertModel(Guid CustomerId, string Address, string Address1, string Address2, string DistrictCode, string ProvincesCode, string WardCode, float TotalCost, string Description, string Status, List<OrderItem> OrderItems);
 
             internal class Validator : AbstractValidator<Command>
             {
@@ -48,6 +48,11 @@ namespace Together.OrderService.Core.UseCases.Commands
                             request.Model.CustomerId,
                             request.Model.TotalCost,
                             request.Model.Address,
+                            request.Model.Address1,
+                            request.Model.Address2,
+                            request.Model.ProvincesCode,
+                            request.Model.WardCode,
+                            request.Model.DistrictCode,
                             request.Model.Status,
                             request.Model.Description,
                             request.Model.OrderItems));
@@ -58,7 +63,7 @@ namespace Together.OrderService.Core.UseCases.Commands
                     });
                     var mapper = config.CreateMapper();
                     var orderItems = new List<OrderItemDto>();
-                   
+
                     if (created.OrderItems.Any())
                     {
                         foreach (var orderItem in created.OrderItems)
