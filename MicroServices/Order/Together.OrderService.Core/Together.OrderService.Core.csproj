@@ -16,4 +16,8 @@
     <ProjectReference Include="..\..\..\Common\Together.Core\Together.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Script\" />
+  </ItemGroup>
+
 </Project>
