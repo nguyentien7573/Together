@@ -18,16 +18,24 @@ namespace Together.OrderService.Core.Entities
 
         public List<OrderItem> OrderItems { get; set; } = default!;
 
-        public static Order Create(Guid customerId, float totalCost, string address, string status, string description, List<OrderItem> orderItems)
+        public static Order Create(Guid customerId, float totalCost, string address, string address1, 
+            string address2, string districtCode, string provincesCode, string wardCode,
+            string status, string description, List<OrderItem> orderItems)
         {
             Order order = new()
             {
                 CustomerId = customerId,
                 TotalCost = totalCost,
                 Address = address,
+                Address1 = address1,
+                Address2= address2,
+                DistrictCode = districtCode,
+                ProvincesCode = provincesCode,
+                WardCode = wardCode,
                 Status = status,
                 Description = description,
                 OrderItems = orderItems
+               
             };
 
             return order;
