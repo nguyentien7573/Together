@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Together.Infrastructure.Data;
 using Together.OrderService.Core.Entities;
+using Together.OrderService.Core.Entities.Address;
 
 namespace Together.OrderService.Infrastructure.Data
 {
@@ -13,6 +14,12 @@ namespace Together.OrderService.Infrastructure.Data
 
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<AdministrativeRegion> AdministrativeRegions { get;set;}
+        public DbSet<AdministrativeUnit> AdministrativeUnits { get; set; }
+        public DbSet<District> Districts { get; set; }
+        public DbSet<Province> Provinces { get; set; }
+        public DbSet<Ward> Wards { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -23,6 +30,12 @@ namespace Together.OrderService.Infrastructure.Data
             modelBuilder.Entity<OrderItem>().ToTable("OrderItems", Schema);
             modelBuilder.Entity<OrderItem>().HasKey(x => x.Id);
             modelBuilder.Entity<OrderItem>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
+
+            modelBuilder.Entity<AdministrativeRegion>().HasKey(x => x.Id);
+            modelBuilder.Entity<AdministrativeUnit>().HasKey(x => x.Id);
+            modelBuilder.Entity<District>().HasKey(x => x.Code);
+            modelBuilder.Entity<Province>().HasKey(x => x.Code);
+            modelBuilder.Entity<Ward>().HasKey(x => x.Code);
         }
     }
 }
