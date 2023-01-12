@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using MassTransit;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Together.Core.Repository;
 using Together.Infrastructure;
+using Together.Infrastructure.EventBus;
 using Together.Infrastructure.Swagger;
 using Together.Infrastructure.Validator;
 using Together.OrderService.Core.Entities;
@@ -33,6 +35,7 @@ namespace Together.OrderService.Infrastructure
             services.AddHttpContextAccessor();
             services.AddCustomMediatR(new[] { typeof(AppCoreAnchor) });
             services.AddCustomValidators(new[] { typeof(AppCoreAnchor) });
+            services.AddMassTransit(config["EventBus:QueueUri"], config["EventBus:UserName"], config["EventBus:PassWord"]);
             services.AddControllers();
             services.AddSwagger(apiType);
 
