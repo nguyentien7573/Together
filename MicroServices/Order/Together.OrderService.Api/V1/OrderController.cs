@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MassTransit;
+using MassTransit.Transports;
+using Microsoft.AspNetCore.Mvc;
 using Together.AppContracts.Dtos.Order;
 using Together.Infrastructure.Controller;
+using Together.OrderService.Core.Entities;
 using Together.OrderService.Core.UseCases.Commands;
 using Together.OrderService.Core.UseCases.Queries;
 
@@ -10,6 +13,7 @@ namespace Together.OrderService.Api.V1
     [ApiVersion("1.0")]
     public class OrderController : BaseController
     {
+       
         [HttpGet("/api/v{version:apiVersion}/order/{id:guid}")]
         public async Task<ActionResult<OrderDto>> HandleGetOrderByIdAsync(Guid id, CancellationToken cancellationToken = new())
         {
