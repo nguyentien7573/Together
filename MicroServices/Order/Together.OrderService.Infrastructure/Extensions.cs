@@ -6,12 +6,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 using Together.Core.Repository;
 using Together.Infrastructure;
 using Together.Infrastructure.EventBus;
 using Together.Infrastructure.Swagger;
 using Together.Infrastructure.Validator;
 using Together.OrderService.Core.Entities;
+using Together.OrderService.Core.EventBus;
 using Together.OrderService.Infrastructure.Data;
 using Together.OrderService.Infrastructure.Repositories;
 using AppCoreAnchor = Together.OrderService.Core.Anchor;
@@ -35,7 +37,50 @@ namespace Together.OrderService.Infrastructure
             services.AddHttpContextAccessor();
             services.AddCustomMediatR(new[] { typeof(AppCoreAnchor) });
             services.AddCustomValidators(new[] { typeof(AppCoreAnchor) });
-            services.AddMassTransit(config["EventBus:QueueUri"], config["EventBus:UserName"], config["EventBus:PassWord"]);
+
+            services.AddMassTransit(x =>
+            {
+                x.UsingRabbitMq((context, cfg) =>
+                {
+                    cfg.Host(config["EventBus:QueueUri"], "/", h =>
+                    {
+                        h.Username(config["EventBus:UserName"]);
+                        h.Password(config["EventBus:PassWord"]);
+                    });
+
+                });
+                x.AddConsumer<OrderConsumer>(typeof(OrderConsumer))
+               .Endpoint(e =>
+               {
+                   e.Name = "order-service-extreme";
+                   e.Temporary = false;
+                   e.ConcurrentMessageLimit = 8;
+                   e.PrefetchCount = 16;
+                   e.InstanceId = "something-unique";
+               });
+
+                x.UsingRabbitMq((context, cfg) => cfg.ConfigureEndpoints(context));
+
+            });
+
+
+            services.AddOptions<MassTransitHostOptions>()
+                .Configure(options =>
+                {
+                    // if specified, waits until the bus is started before
+                    // returning from IHostedService.StartAsync
+                    // default is false
+                    options.WaitUntilStarted = true;
+
+                    // if specified, limits the wait time when starting the bus
+                    options.StartTimeout = TimeSpan.FromSeconds(10);
+
+                    // if specified, limits the wait time when stopping the bus
+                    options.StopTimeout = TimeSpan.FromSeconds(30);
+                });
+            services.AddMassTransitHostedService();
+
+
             services.AddControllers();
             services.AddSwagger(apiType);
 
@@ -43,7 +88,6 @@ namespace Together.OrderService.Infrastructure
 
             services.AddScoped<IRepository<Order>, OrderRepository>();
             services.AddScoped<IRepository<OrderItem>, OrderItemRepository>();
-
             return services;
         }
 
