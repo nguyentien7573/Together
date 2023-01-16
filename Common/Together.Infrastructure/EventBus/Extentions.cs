@@ -2,17 +2,29 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.DependencyInjection;
+using Together.Core.Domain;
 
 namespace Together.Infrastructure.EventBus
 {
     public static class Extentions
     {
-        public static IServiceCollection AddMassTransit(this IServiceCollection services)
+        
+        public static IServiceCollection AddMassTransit(this IServiceCollection services, string url, string userName, string password)
         {
             services.AddMassTransit(x =>
             {
-                x.UsingRabbitMq();
+                x.UsingRabbitMq((context, cfg) =>
+                {
+                    cfg.Host(url, "/", h =>
+                    {
+                        h.Username(userName);
+                        h.Password(password);
+                    });
+
+                });
+
             });
+
 
             services.AddOptions<MassTransitHostOptions>()
                 .Configure(options =>
