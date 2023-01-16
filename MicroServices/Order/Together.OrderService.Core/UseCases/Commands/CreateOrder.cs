@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
+using MassTransit;
 using MediatR;
 using Together.AppContracts.Dtos.Order;
 using Together.Core.Domain;
@@ -35,53 +36,19 @@ namespace Together.OrderService.Core.UseCases.Commands
             internal class Handler : IRequestHandler<Command, ResultModel<OrderDto>>
             {
                 private readonly IRepository<Order> _orderRepository;
+                private readonly IPublishEndpoint _publishEndpoint;
 
-                public Handler(IRepository<Order> orderRepository)
+                public Handler(IRepository<Order> orderRepository, IPublishEndpoint publishEndpoint)
                 {
                     _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
+                    _publishEndpoint = publishEndpoint;
                 }
 
                 public async Task<ResultModel<OrderDto>> Handle(Command request, CancellationToken cancellationToken)
                 {
-                    var created = await _orderRepository.AddAsync(
-                        Order.Create(
-                            request.Model.CustomerId,
-                            request.Model.TotalCost,
-                            request.Model.Address,
-                            request.Model.Address1,
-                            request.Model.Address2,
-                            request.Model.ProvincesCode,
-                            request.Model.WardCode,
-                            request.Model.DistrictCode,
-                            request.Model.Status,
-                            request.Model.Description,
-                            request.Model.OrderItems));
-
-                    var config = new MapperConfiguration(cfg =>
-                    {
-                        cfg.AddProfile(new MappingProfile());
-                    });
-                    var mapper = config.CreateMapper();
-                    var orderItems = new List<OrderItemDto>();
-
-                    if (created.OrderItems.Any())
-                    {
-                        foreach (var orderItem in created.OrderItems)
-                        {
-                            orderItems.Add(mapper.Map<OrderItem, OrderItemDto>(orderItem));
-                        }
-                    }
-
-                    return ResultModel<OrderDto>.Create(new OrderDto
-                    {
-                        Id = created.Id,
-                        CustomerId = created.CustomerId,
-                        TotalCost = created.TotalCost,
-                        Address = created.Address,
-                        Status = created.Status,
-                        Description = created.Description,
-                        OrderItems = orderItems,
-                    });
+                    var message = request.Model;
+                    await _publishEndpoint.Publish<OrderDto>(message);
+                    return null;
                 }
             }
         }
