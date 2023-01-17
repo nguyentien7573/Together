@@ -7,7 +7,7 @@
     {
       "UpstreamPathTemplate": "/product/{id}",
       "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamPathTemplate": "/api/v1/products/{id}",
+      "DownstreamPathTemplate": "/api/v1/product/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -18,9 +18,9 @@
       "DangerousAcceptAnyServerCertificateValidator": true
     },
     {
-      "UpstreamPathTemplate": "/gateway/product",
+      "UpstreamPathTemplate": "/product/createProduct",
       "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamPathTemplate": "/api/v1/product",
+      "DownstreamPathTemplate": "/api/v1/createProduct",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -30,14 +30,50 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/customers",
-      "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamPathTemplate": "/api/v1/customer",
+      "UpstreamPathTemplate": "/customers/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/v1/getCustomer",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
           "Port": 5002
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/customers/createCustomer",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/v1/createCustomer",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/order/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/v1/order/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/order/createOrder",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/v1/order/createOrder",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
         }
       ]
     }
