@@ -13,6 +13,7 @@ using Together.ProductService.Core.Entities;
 using Together.ProductService.Infrastructure.Data;
 using Together.ProductService.Infrastructure.Repositories;
 using AppCoreAnchor = Together.ProductService.Core.Anchor;
+using Together.ProductService.Core.Interface;
 
 namespace Together.ProductService.Infrastructure
 {
@@ -38,7 +39,7 @@ namespace Together.ProductService.Infrastructure
 
             services.AddDbContext<ProductDbContext>(options => options.UseSqlServer(config.GetConnectionString("defaultConnection")));
 
-            services.AddScoped<IRepository<Product>, ProductRepository>();
+            services.AddScoped<IProductRepository<Product>, ProductRepository>();
             services.AddScoped<IRepository<Category>, CategoryRepository>();
 
             return services;
