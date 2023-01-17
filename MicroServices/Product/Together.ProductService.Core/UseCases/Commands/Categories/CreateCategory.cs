@@ -6,7 +6,7 @@ using Together.Core.Domain;
 using Together.Core.Repository;
 using Together.ProductService.Core.Entities;
 
-namespace Together.ProductService.Core.UseCases.Commands
+namespace Together.ProductService.Core.UseCases.Commands.Categories
 {
     public class CreateCategory
     {

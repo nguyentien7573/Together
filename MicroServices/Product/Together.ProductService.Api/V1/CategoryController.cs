@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Together.Infrastructure.Controller;
-using Together.ProductService.Core.UseCases.Commands;
+using Together.ProductService.Core.UseCases.Commands.Categories;
 using Together.ProductService.Core.UseCases.Queries;
 
 namespace Together.ProductService.Api.V1
@@ -10,14 +10,27 @@ namespace Together.ProductService.Api.V1
     public class CategoryController : BaseController
     {
         [HttpGet("/api/v{version:apiVersion}/getCategoryById")]
-        public async Task<ActionResult> HandleGetCategoryByIdAsync(Guid id, CancellationToken cancellationToken = new())
+        public async Task<ActionResult> GetByIdAsync(Guid id, CancellationToken cancellationToken = new())
         {
             var request = new GetCategoryById.Query { Id = id };
             return Ok(await Mediator.Send(request, cancellationToken));
         }
 
         [HttpPost("/api/v{version:apiVersion}/createCategory")]
-        public async Task<ActionResult> HandleCreateCategoryAsync([FromBody] CreateCategory.Command request, CancellationToken cancellationToken = new())
+        public async Task<ActionResult> CreateAsync([FromBody] CreateCategory.Command request, CancellationToken cancellationToken = new())
+        {
+            return Ok(await Mediator.Send(request, cancellationToken));
+        }
+
+        [HttpPut("/api/v{version:apiVersion}/updateCategory")]
+        public async Task<ActionResult> UpdateAsync([FromBody] UpdateCategory.Command request, CancellationToken cancellationToken = new())
+        {
+            return Ok(await Mediator.Send(request, cancellationToken));
+        }
+
+
+        [HttpPut("/api/v{version:apiVersion}/deleteCategory")]
+        public async Task<ActionResult> DeleteAsync([FromBody] DeleteCategory.Command request, CancellationToken cancellationToken = new())
         {
             return Ok(await Mediator.Send(request, cancellationToken));
         }
