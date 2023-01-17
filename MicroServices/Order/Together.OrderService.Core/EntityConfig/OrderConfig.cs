@@ -9,6 +9,9 @@ namespace Together.OrderService.Core.EntityConfig
         public static void CreateMap(IMapperConfigurationExpression cfg)
         {
             cfg.CreateMap<Order, OrderDto>();
+            cfg.CreateMap<OrderDto, Order>();
+            cfg.CreateMap<OrderItem, OrderItemDto>();
+            cfg.CreateMap<OrderItemDto, OrderItem>();
         }
     }
 }
