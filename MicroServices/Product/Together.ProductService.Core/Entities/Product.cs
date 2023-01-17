@@ -1,5 +1,4 @@
 ﻿using Together.Core.Domain;
-using Together.Core.Helpers;
 
 namespace Together.ProductService.Core.Entities
 {

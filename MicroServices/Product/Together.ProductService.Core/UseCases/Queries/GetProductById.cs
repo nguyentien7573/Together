@@ -4,6 +4,7 @@ using Together.AppContracts.Dtos.Product;
 using Together.Core.Domain;
 using Together.Core.Repository;
 using Together.ProductService.Core.Entities;
+using Together.ProductService.Core.Interface;
 
 namespace Together.ProductService.Core.UseCases.Queries
 {
@@ -26,9 +27,9 @@ namespace Together.ProductService.Core.UseCases.Queries
 
             internal class Handler : IRequestHandler<Query, ResultModel<ProductDto>>
             {
-                private readonly IRepository<Product> _productRepository;
+                private readonly IProductRepository<Product> _productRepository;
 
-                public Handler(IRepository<Product> productRepository)
+                public Handler(IProductRepository<Product> productRepository)
                 {
                     _productRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));
                 }
