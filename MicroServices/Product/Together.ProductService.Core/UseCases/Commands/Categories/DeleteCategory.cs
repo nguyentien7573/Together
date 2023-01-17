@@ -10,7 +10,7 @@ namespace Together.ProductService.Core.UseCases.Commands.Categories
     {
         public record Command : IRequest<bool>
         {
-            public UpdateCategoryModel Model { get; init; } = default!;
+            public Guid Id { get; init; } = default!;
 
             public record UpdateCategoryModel(Guid Id);
 
@@ -18,7 +18,7 @@ namespace Together.ProductService.Core.UseCases.Commands.Categories
             {
                 public Validator()
                 {
-                    RuleFor(v => v.Model.Id)
+                    RuleFor(v => v.Id)
                         .NotEmpty().WithMessage("Id is required.");
                 }
             }
@@ -36,7 +36,7 @@ namespace Together.ProductService.Core.UseCases.Commands.Categories
 
                 public async Task<bool> Handle(Command request, CancellationToken cancellationToken)
                 {
-                    var category = await _categoryRepository.FindById(request.Model.Id);
+                    var category = await _categoryRepository.FindById(request.Id);
 
                     if (category == null)
                     {
