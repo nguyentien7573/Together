@@ -37,9 +37,18 @@ namespace Together.OrderService.Infrastructure
             services.AddHttpContextAccessor();
             services.AddCustomMediatR(new[] { typeof(AppCoreAnchor) });
             services.AddCustomValidators(new[] { typeof(AppCoreAnchor) });
+            services.AddControllers();
+            services.AddSwagger(apiType);
+
+            services.AddDbContext<OrderDbContext>(options => options.UseSqlServer(config.GetConnectionString("defaultConnection")));
+
+            services.AddScoped<IRepository<Order>, OrderRepository>();
+            services.AddScoped<IRepository<OrderItem>, OrderItemRepository>();
 
             services.AddMassTransit(x =>
             {
+                x.AddConsumer<OrderConsumer>(typeof(OrderConsumerDefinition));
+
                 x.UsingRabbitMq((context, cfg) =>
                 {
                     cfg.Host(config["EventBus:QueueUri"], "/", h =>
@@ -48,46 +57,20 @@ namespace Together.OrderService.Infrastructure
                         h.Password(config["EventBus:PassWord"]);
                     });
 
+                    cfg.ConfigureEndpoints(context);
                 });
-                x.AddConsumer<OrderConsumer>(typeof(OrderConsumer))
-               .Endpoint(e =>
-               {
-                   e.Name = "order-service-extreme";
-                   e.Temporary = false;
-                   e.ConcurrentMessageLimit = 8;
-                   e.PrefetchCount = 16;
-                   e.InstanceId = "something-unique";
-               });
-
-                x.UsingRabbitMq((context, cfg) => cfg.ConfigureEndpoints(context));
 
             });
-
 
             services.AddOptions<MassTransitHostOptions>()
                 .Configure(options =>
                 {
-                    // if specified, waits until the bus is started before
-                    // returning from IHostedService.StartAsync
-                    // default is false
                     options.WaitUntilStarted = true;
-
-                    // if specified, limits the wait time when starting the bus
                     options.StartTimeout = TimeSpan.FromSeconds(10);
-
-                    // if specified, limits the wait time when stopping the bus
                     options.StopTimeout = TimeSpan.FromSeconds(30);
                 });
             services.AddMassTransitHostedService();
 
-
-            services.AddControllers();
-            services.AddSwagger(apiType);
-
-            services.AddDbContext<OrderDbContext>(options => options.UseSqlServer(config.GetConnectionString("defaultConnection")));
-
-            services.AddScoped<IRepository<Order>, OrderRepository>();
-            services.AddScoped<IRepository<OrderItem>, OrderItemRepository>();
             return services;
         }
 
