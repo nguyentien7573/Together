@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Together.Infrastructure.Controller;
 using Together.ProductService.Core.UseCases.Commands.Categories;
-using Together.ProductService.Core.UseCases.Queries;
+using Together.ProductService.Core.UseCases.Queries.Categories;
 
 namespace Together.ProductService.Api.V1
 {
