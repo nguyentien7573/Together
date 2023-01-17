@@ -8,7 +8,7 @@ namespace Together.Infrastructure.Data
         where TEntity : EntityBase
         where TDbContext : DbContext
     {
-        private readonly TDbContext _dbContext;
+        public readonly TDbContext _dbContext;
 
         protected RepositoryBase(TDbContext dbContext)
         {
