@@ -14,7 +14,7 @@ namespace Together.ProductService.Core.UseCases.Commands.Products
         {
             public CreateProductModel Model { get; init; } = default!;
 
-            public record CreateProductModel(string Name, int Quantity, decimal Cost,Guid CategoryID, bool isActive);
+            public record CreateProductModel(string Name, int Quantity, decimal Cost, Guid CategoryID, bool isActive);
 
             internal class Validator : AbstractValidator<Command>
             {
@@ -38,14 +38,25 @@ namespace Together.ProductService.Core.UseCases.Commands.Products
             internal class Handler : IRequestHandler<Command, ResultModel<ProductDto>>
             {
                 private readonly IProductRepository<Product> _productRepository;
+                private readonly IRepository<Category> _categoryRepository;
 
-                public Handler(IProductRepository<Product> productRepository)
+                public Handler(IProductRepository<Product> productRepository, IRepository<Category> categoryRepository)
                 {
                     _productRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));
+                    _categoryRepository = categoryRepository ?? throw new ArgumentNullException(nameof(categoryRepository));
                 }
 
                 public async Task<ResultModel<ProductDto>> Handle(Command request, CancellationToken cancellationToken)
                 {
+                    if (request == null)
+                        return null;
+
+                    var cate = await _categoryRepository.FindById(request.Model.CategoryID);
+
+                    if (cate == null)
+                        return null;
+
+
                     var created = await _productRepository.AddAsync(
                         Product.Create(
                             request.Model.Name,
