@@ -29,9 +29,10 @@ namespace Together.ProductService.Api.V1
         }
 
 
-        [HttpPut("/api/v{version:apiVersion}/deleteCategory")]
-        public async Task<ActionResult> DeleteAsync([FromBody] DeleteCategory.Command request, CancellationToken cancellationToken = new())
+        [HttpDelete("/api/v{version:apiVersion}/deleteCategory")]
+        public async Task<ActionResult> DeleteAsync(Guid Id, CancellationToken cancellationToken = new())
         {
+            var request = new DeleteCategory.Command { Id = Id };
             return Ok(await Mediator.Send(request, cancellationToken));
         }
     }
