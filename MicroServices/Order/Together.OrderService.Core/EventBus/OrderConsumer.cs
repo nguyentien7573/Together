@@ -11,10 +11,13 @@ namespace Together.OrderService.Core.EventBus
     {
         private readonly IRepository<Order> _orderRepository;
 
-      
+        public OrderConsumer(IRepository<Order> orderRepository)
+        {
+            _orderRepository = orderRepository;
+        }
+
         public async Task Consume(ConsumeContext<OrderDto> context)
         {
-
             var request = context.Message;
 
             var config = new MapperConfiguration(cfg =>
@@ -28,7 +31,7 @@ namespace Together.OrderService.Core.EventBus
             {
                 foreach (var orderItem in request.OrderItems)
                 {
-                    orderItems.Add(mapper.Map<OrderItemDto,OrderItem>(orderItem));
+                    orderItems.Add(mapper.Map<OrderItemDto, OrderItem>(orderItem));
                 }
             }
 
@@ -45,7 +48,6 @@ namespace Together.OrderService.Core.EventBus
                           request.Status,
                           request.Description,
                           orderItems));
-            throw new NotImplementedException();
         }
     }
 }
