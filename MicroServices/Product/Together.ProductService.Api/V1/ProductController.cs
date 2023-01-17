@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Together.AppContracts.Dtos.Product;
 using Together.Infrastructure.Controller;
 using Together.ProductService.Core.UseCases.Commands.Products;
-using Together.ProductService.Core.UseCases.Queries;
+using Together.ProductService.Core.UseCases.Queries.Products;
 
 namespace Together.ProductService.Api.V1
 {
@@ -21,6 +21,13 @@ namespace Together.ProductService.Api.V1
         [HttpPost("/api/v{version:apiVersion}/createProduct")]
         public async Task<ActionResult> CreateAsync([FromBody] CreateProduct.Command request, CancellationToken cancellationToken = new())
         {
+            return Ok(await Mediator.Send(request, cancellationToken));
+        }
+
+        [HttpGet("/api/v{version:apiVersion}/getProductsByCategory")]
+        public async Task<ActionResult> GetAsync(Guid id, CancellationToken cancellationToken = new())
+        {
+            var request = new GetProductByCategoryId.Query { Id = id };
             return Ok(await Mediator.Send(request, cancellationToken));
         }
     }

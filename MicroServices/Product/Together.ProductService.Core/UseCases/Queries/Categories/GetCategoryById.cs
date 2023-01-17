@@ -1,16 +1,21 @@
 ﻿using FluentValidation;
 using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Together.AppContracts.Dtos.Category;
 using Together.AppContracts.Dtos.Product;
 using Together.Core.Domain;
 using Together.Core.Repository;
 using Together.ProductService.Core.Entities;
-using Together.ProductService.Core.Interface;
 
-namespace Together.ProductService.Core.UseCases.Queries
+namespace Together.ProductService.Core.UseCases.Queries.Categories
 {
-    public class GetProductById
+    public class GetCategoryById
     {
-        public record Query : IItemQuery<Guid, ProductDto>
+        public record Query : IItemQuery<Guid, CategoryDto>
         {
             public List<string> Includes { get; init; } = new();
             public Guid Id { get; init; }
@@ -25,34 +30,32 @@ namespace Together.ProductService.Core.UseCases.Queries
                 }
             }
 
-            internal class Handler : IRequestHandler<Query, ResultModel<ProductDto>>
+            internal class Handler : IRequestHandler<Query, ResultModel<CategoryDto>>
             {
-                private readonly IProductRepository<Product> _productRepository;
+                private readonly IRepository<Category> _categoryRepository;
 
-                public Handler(IProductRepository<Product> productRepository)
+                public Handler(IRepository<Category> categoryRepository)
                 {
-                    _productRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));
+                    _categoryRepository = categoryRepository ?? throw new ArgumentNullException(nameof(categoryRepository));
                 }
 
-                public async Task<ResultModel<ProductDto>> Handle(Query request,
+                public async Task<ResultModel<CategoryDto>> Handle(Query request,
                     CancellationToken cancellationToken)
                 {
                     if (request == null) throw new ArgumentNullException(nameof(request));
 
-                    var product = await _productRepository.FindById(request.Id);
+                    var product = await _categoryRepository.FindById(request.Id);
 
                     if (product == null)
                     {
                         return null;
                     }
 
-                    return  ResultModel<ProductDto>.Create(new ProductDto
+                    return ResultModel<CategoryDto>.Create(new CategoryDto
                     {
                         Id = product.Id,
                         Name = product.Name,
                         Active = product.Active,
-                        Cost = product.Cost,
-                        Quantity = product.Quantity,
                         CreatedOn = product.CreatedOn,
                         UpdatedOn = product.UpdatedOn,
                     });
