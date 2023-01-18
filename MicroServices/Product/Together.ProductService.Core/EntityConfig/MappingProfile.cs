@@ -8,7 +8,7 @@ namespace Together.ProductService.Core.EntityConfig
     {
         public MappingProfile()
         {
-            CreateMap<IEnumerable<Product>, IEnumerable<ProductDto>>();
+            CreateMap<Product, ProductDto>();
         }
     }
 }
