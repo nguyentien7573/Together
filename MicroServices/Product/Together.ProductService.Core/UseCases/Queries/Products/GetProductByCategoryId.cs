@@ -17,6 +17,7 @@ namespace Together.ProductService.Core.UseCases.Queries.Products
 {
     public class GetProductByCategoryId
     {
+
         public record Query : IRequest<IEnumerable<ProductDto>>
         {
             public Guid Id { get; init; }
@@ -52,10 +53,9 @@ namespace Together.ProductService.Core.UseCases.Queries.Products
                     
                     var mapper = config.CreateMapper();
                     
-                    var result = mapper.Map<IEnumerable<Product>, List<ProductDto>>(prods);
+                    var result = mapper.Map<List<ProductDto>>(prods);
 
                     return result;
-
                 }
             }
         }
