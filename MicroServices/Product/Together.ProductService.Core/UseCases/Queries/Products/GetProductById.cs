@@ -49,9 +49,13 @@ namespace Together.ProductService.Core.UseCases.Queries.Products
                     {
                         Id = product.Id,
                         Name = product.Name,
-                        Active = product.Active,
-                        Cost = product.Cost,
-                        Quantity = product.Quantity,
+                        Description = product.Description,
+                        SKU = product.SKU,
+                        CategoryId = product.CategoryId,
+                        InventoryId = product.InventoryId ?? new Guid(),
+                        Price = product.Price,
+                        DiscountId = product.DiscountId ?? new Guid(),
+                        IsActive = product.IsActive,
                         CreatedOn = product.CreatedOn,
                         UpdatedOn = product.UpdatedOn,
                     });
