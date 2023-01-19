@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
 using MediatR;
 using Together.AppContracts.Dtos.Category;
-using Together.AppContracts.Dtos.Product;
 using Together.Core.Domain;
 using Together.Core.Repository;
 using Together.ProductService.Core.Entities;
