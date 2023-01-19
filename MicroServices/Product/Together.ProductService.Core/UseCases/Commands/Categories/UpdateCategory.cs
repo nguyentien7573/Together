@@ -11,7 +11,7 @@ namespace Together.ProductService.Core.UseCases.Commands.Categories
         {
             public UpdateCategoryModel Model { get; init; } = default!;
 
-            public record UpdateCategoryModel(Guid Id, string Name, bool IsActive);
+            public record UpdateCategoryModel(Guid Id, string Name, string Description, bool IsActive);
 
             internal class Validator : AbstractValidator<Command>
             {
@@ -42,7 +42,8 @@ namespace Together.ProductService.Core.UseCases.Commands.Categories
                     }
 
                     category.Name = request.Model.Name;
-                    category.Active = request.Model.IsActive;
+                    category.Description = request.Model.Description;
+                    category.IsActive = request.Model.IsActive;
 
                     var updated = await _categoryRepository.Update(category);
 

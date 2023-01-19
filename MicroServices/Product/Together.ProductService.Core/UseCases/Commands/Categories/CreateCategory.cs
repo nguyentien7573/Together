@@ -14,7 +14,7 @@ namespace Together.ProductService.Core.UseCases.Commands.Categories
         {
             public CreateCategoryModel Model { get; init; } = default!;
 
-            public record CreateCategoryModel(string Name, bool IsActive);
+            public record CreateCategoryModel(string Name, string Description ,bool IsActive);
 
             internal class Validator : AbstractValidator<Command>
             {
@@ -40,13 +40,15 @@ namespace Together.ProductService.Core.UseCases.Commands.Categories
                     var created = await _categoryRepository.AddAsync(
                         Category.Create(
                             request.Model.Name,
+                            request.Model.Description,
                             request.Model.IsActive));
 
                     return ResultModel<CategoryDto>.Create(new CategoryDto
                     {
                         Id = created.Id,
                         Name = created.Name,
-                        Active = created.Active,
+                        Description = created.Description,
+                        IsActive = created.IsActive,
                         CreatedOn = created.CreatedOn,
                         UpdatedOn = created.UpdatedOn,
                     });

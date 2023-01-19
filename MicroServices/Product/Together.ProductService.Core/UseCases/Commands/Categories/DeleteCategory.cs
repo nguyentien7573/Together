@@ -43,7 +43,7 @@ namespace Together.ProductService.Core.UseCases.Commands.Categories
                         return false;
                     }
 
-                    category.Active = false;
+                    category.IsActive = false;
                     var updated = await _categoryRepository.Update(category);
 
                     var prods = await _productRepository.GetProductsByCategoryId(category.Id);
@@ -52,7 +52,7 @@ namespace Together.ProductService.Core.UseCases.Commands.Categories
                     {
                         foreach (var item in prods)
                         {
-                            item.Active = false;
+                            item.IsActive = false;
                             await _productRepository.Update(item);
                         }
                     }
