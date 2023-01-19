@@ -36,3 +36,13 @@ MicroServices/Identity/Together.IdentityServer/bin
 MicroServices/Identity/Together.IdentityServer/obj
 EventsBus/Together.Product.Process/bin/
 EventsBus/Together.Product.Process/obj/
+MicroServices/Warehouse/Together.Warehouse.Core/bin/
+MicroServices/Warehouse/Together.Warehouse.Core/obj/
+MicroServices/Warehouse/Together.Warehouse.Infrastructor/bin/
+MicroServices/Warehouse/Together.Warehouse.Infrastructor/obj/
+MicroServices/Shopping/Together.Shopping.Infrastructor/obj/
+MicroServices/Shopping/Together.Shopping.Infrastructor/bin/
+MicroServices/Shopping/Together.Shopping.Core/obj/
+MicroServices/Shopping/Together.Shopping.Core/bin/
+MicroServices/Shopping/Together.Shopping.Api/obj/
+MicroServices/Shopping/Together.Shopping.Api/bin/

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -15,10 +15,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\Together.AppContracts\Together.AppContracts.csproj" />
     <ProjectReference Include="..\..\..\Common\Together.Core\Together.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Script\" />
   </ItemGroup>
 
 </Project>

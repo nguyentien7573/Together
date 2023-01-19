@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Together.OrderService.Infrastructure": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:56579;http://localhost:56581"
+    }
+  }
+}
