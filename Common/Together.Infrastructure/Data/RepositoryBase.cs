@@ -36,7 +36,7 @@ namespace Together.Infrastructure.Data
 
             if (tempEntity != null)
             {
-                tempEntity.Active = false;
+                tempEntity.IsActive = false;
                 var result = await _dbContext.SaveChangesAsync();
                 return result > 0;
             }
