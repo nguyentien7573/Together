@@ -38,15 +38,13 @@ namespace Together.OrderService.Core.EventBus
             var created = await _orderRepository.AddAsync(
                       Order.Create(
                           request.CustomerId,
-                          request.TotalCost,
+                          request.Total,
                           request.Address,
                           request.Address1,
                           request.Address2,
                           request.ProvincesCode,
                           request.WardCode,
                           request.DistrictCode,
-                          request.Status,
-                          request.Description,
                           orderItems));
         }
     }
