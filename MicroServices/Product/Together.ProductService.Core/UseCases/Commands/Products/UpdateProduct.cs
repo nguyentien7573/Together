@@ -13,7 +13,7 @@ namespace Together.ProductService.Core.UseCases.Commands.Products
         {
             public UpdateProductModel Model { get; init; } = default!;
 
-            public record UpdateProductModel(Guid Id, string Name, int Quantity, decimal Cost, Guid CategoryID, bool isActive);
+            public record UpdateProductModel(Guid Id, string Name, string Description, string SKU, Guid CategoryId, Guid? InventoryId, decimal Price, Guid? DiscountId, bool IsActive);
 
             internal class Validator : AbstractValidator<Command>
             {
@@ -23,14 +23,11 @@ namespace Together.ProductService.Core.UseCases.Commands.Products
                         .NotEmpty().WithMessage("Name is required.")
                         .MaximumLength(50).WithMessage("Name must not exceed 50 characters.");
 
-                    RuleFor(x => x.Model.Quantity)
-                        .GreaterThanOrEqualTo(1).WithMessage("Quantity should at least greater than or equal to 1.");
+                    RuleFor(x => x.Model.CategoryId)
+                 .NotEmpty().WithMessage("CategoryId is required.");
 
-                    RuleFor(x => x.Model.Cost)
-                        .GreaterThanOrEqualTo(1000).WithMessage("Cost should be greater than 1000.");
-
-                    RuleFor(x => x.Model.CategoryID)
-                        .NotEmpty().WithMessage("Category is required.");
+                    RuleFor(x => x.Model.InventoryId)
+                        .NotEmpty().WithMessage("InventoryId is required.");
                 }
             }
 
@@ -49,7 +46,7 @@ namespace Together.ProductService.Core.UseCases.Commands.Products
                     {
                         return false;
                     }
-                    
+
                     var prod = await _productRepository.FindById(request.Model.Id);
                     if (prod == null)
                     {
@@ -57,10 +54,13 @@ namespace Together.ProductService.Core.UseCases.Commands.Products
                     }
 
                     prod.Name = request.Model.Name;
-                    prod.Quantity = request.Model.Quantity;
-                    prod.Cost = request.Model.Cost;
-                    prod.CategoryId = request.Model.CategoryID;
-                    prod.Active = request.Model.isActive;
+                    prod.Description = request.Model.Description;
+                    prod.SKU = request.Model.SKU;
+                    prod.CategoryId = request.Model.CategoryId;
+                    prod.InventoryId = request.Model.InventoryId ?? new Guid();
+                    prod.Price = request.Model.Price;
+                    prod.DiscountId = request.Model.DiscountId ?? new Guid();
+                    prod.IsActive = request.Model.IsActive;
 
                     var result = await _productRepository.Update(prod);
 

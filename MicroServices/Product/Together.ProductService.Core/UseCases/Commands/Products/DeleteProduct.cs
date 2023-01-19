@@ -39,7 +39,7 @@ namespace Together.ProductService.Core.UseCases.Commands.Products
                     if (prod == null) 
                         return false;
 
-                    prod.Active = false;
+                    prod.IsActive = false;
 
                     return await _productRepository.Update(prod);
                    
