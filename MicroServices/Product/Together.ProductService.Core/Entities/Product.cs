@@ -10,7 +10,7 @@ namespace Together.ProductService.Core.Entities
         public Guid CategoryId { get; set; }
         public Guid? InventoryId { get; set; }
         public decimal Price { get; set; } = 0;
-        public Guid? DiscountID { get; set; }
+        public Guid? DiscountId { get; set; }
 
         public static Product Create(string name, string description, string sku, Guid categoryId, Guid inventoryId, decimal price, Guid discountID, bool isActive)
         {
@@ -22,7 +22,7 @@ namespace Together.ProductService.Core.Entities
                 CategoryId = categoryId,
                 InventoryId = inventoryId,
                 Price = price, 
-                DiscountID = discountID,
+                DiscountId = discountID,
                 IsActive = isActive
             };
 
