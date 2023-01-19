@@ -16,31 +16,26 @@ namespace Together.OrderService.Core.UseCases.Commands
         {
             public CreateOrdertModel Model { get; init; } = default!;
 
-            public record CreateOrdertModel(Guid CustomerId, string Address, string Address1, string Address2, string DistrictCode, string ProvincesCode, string WardCode, float TotalCost, string Description, string Status, List<OrderItem> OrderItems);
+            public record CreateOrdertModel(Guid customerId, string address, string address1, string address2, string districtCode, string provincesCode, string wardCode, float total, List<OrderItem> OrderItems);
 
             internal class Validator : AbstractValidator<Command>
             {
                 public Validator()
                 {
-                    RuleFor(v => v.Model.CustomerId)
+                    RuleFor(v => v.Model.customerId)
                         .NotEmpty().WithMessage("CustomerId is required.");
 
-                    RuleFor(x => x.Model.TotalCost)
+                    RuleFor(x => x.Model.total)
                         .GreaterThanOrEqualTo(0).WithMessage("Quantity should at least greater than or equal to 0.");
-
-                    RuleFor(x => x.Model.Status)
-                        .NotEmpty().WithMessage("Category is required.");
                 }
             }
 
             internal class Handler : IRequestHandler<Command, ResultModel<OrderDto>>
             {
-                private readonly IRepository<Order> _orderRepository;
                 private readonly IPublishEndpoint _publishEndpoint;
 
-                public Handler(IRepository<Order> orderRepository, IPublishEndpoint publishEndpoint)
+                public Handler(IPublishEndpoint publishEndpoint)
                 {
-                    _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
                     _publishEndpoint = publishEndpoint;
                 }
 
