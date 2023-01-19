@@ -9,6 +9,6 @@ namespace Together.Core.Domain
         public Guid CreatedBy { get; set; }
         public DateTime? UpdatedOn { get; set; }
         public Guid? UpdatedBy { get; set; }
-        public bool Active { get; set; }
+        public bool IsActive { get; set; }
     }
 }
