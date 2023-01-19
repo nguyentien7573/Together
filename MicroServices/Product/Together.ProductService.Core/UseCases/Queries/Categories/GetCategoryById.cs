@@ -55,7 +55,7 @@ namespace Together.ProductService.Core.UseCases.Queries.Categories
                     {
                         Id = product.Id,
                         Name = product.Name,
-                        Active = product.Active,
+                        IsActive = product.IsActive,
                         CreatedOn = product.CreatedOn,
                         UpdatedOn = product.UpdatedOn,
                     });
