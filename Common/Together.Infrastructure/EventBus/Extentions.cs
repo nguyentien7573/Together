@@ -8,7 +8,7 @@ namespace Together.Infrastructure.EventBus
 {
     public static class Extentions
     {
-        
+        [Obsolete]
         public static IServiceCollection AddMassTransit(this IServiceCollection services, string url, string userName, string password)
         {
             services.AddMassTransit(x =>
