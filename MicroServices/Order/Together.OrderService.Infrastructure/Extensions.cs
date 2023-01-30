@@ -24,6 +24,7 @@ namespace Together.OrderService.Infrastructure
     {
         private const string CorsName = "api";
 
+        [Obsolete]
         public static IServiceCollection AddCoreServices(this IServiceCollection services, IConfiguration config, IWebHostEnvironment env, Type apiType)
         {
             services.AddCors(options =>
