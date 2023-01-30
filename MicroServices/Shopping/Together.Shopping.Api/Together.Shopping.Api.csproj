@@ -7,7 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Together.AppContracts\Together.AppContracts.csproj" />
+    <ProjectReference Include="..\..\..\Common\Together.Infrastructure\Together.Infrastructure.csproj" />
+    <ProjectReference Include="..\Together.Shopping.Core\Together.Shopping.Core.csproj" />
+    <ProjectReference Include="..\Together.Shopping.Infrastructor\Together.Shopping.Infrastructor.csproj" />
   </ItemGroup>
 
 </Project>
