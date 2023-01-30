@@ -4,9 +4,9 @@ namespace Together.CustomerService.Core.Entities
 {
     public class Customer : EntityBase
     {
-        public string FirstName { get; protected set; }
-        public string LastName { get; protected set; }
-        public string Email { get; protected set; }
+        public string FirstName { get; protected set; } = default!;
+        public string LastName { get; protected set; } = default!;
+        public string Email { get; protected set; } = default!;
 
         public static Customer Create(string firstname, string lastname, string email)
         {
