@@ -17,11 +17,11 @@ namespace Together.Shopping.Infrastructor.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<CartItem>().ToTable("Products", Schema);
+            modelBuilder.Entity<CartItem>().ToTable("CartItem", Schema);
             modelBuilder.Entity<CartItem>().HasKey(x => x.Id);
             modelBuilder.Entity<CartItem>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
 
-            modelBuilder.Entity<ShoppingSession>().ToTable("Categories", Schema);
+            modelBuilder.Entity<ShoppingSession>().ToTable("ShoppingSession", Schema);
             modelBuilder.Entity<ShoppingSession>().HasKey(x => x.Id);
             modelBuilder.Entity<ShoppingSession>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
         }
